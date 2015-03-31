@@ -67,7 +67,10 @@ class res_partner(osv.osv):
         n = 0
         sum = 0
 
-        if not vat.isdigit:
+        if not vat:
+            return True
+
+        if not vat.isdigit():
             return False
 
         if (len(vat) != 11):
